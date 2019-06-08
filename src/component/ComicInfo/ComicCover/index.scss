@@ -1,0 +1,14 @@
+.comicCover_block {
+    width: 85%;
+    box-sizing: border-box;
+    border: 4px solid #000000;
+    flex-shrink: 1;
+}
+
+.comicCover_image {
+    height: 438px;
+    width: 100%;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}

@@ -19,13 +19,16 @@ describe('<Chapter />', () => {
   });
 
   test('測試有沒有正常 render', () => {
-    const { getByTestId, } = render(
+    const { getByTestId, queryByTestId, } = render(
       <HashRouter>
         <Chapter key={item.id} content={item} />
       </HashRouter>
     );
 
     expect(getByTestId('chapter_block')).toBeInTheDocument();
+
+    // 不是 new 就不會出現 new mark
+    expect(queryByTestId('new_mark')).toBeNull();
   });
 
   test('測試路由會不會正常換頁', () => {
@@ -41,5 +44,17 @@ describe('<Chapter />', () => {
     const chapter = getByTestId('chapter_link');
     fireEvent.click(chapter);
     expect(history.location.pathname).toBe(`/chapter/${item.id}`);
+  });
+
+  test('測試 new mark 有沒有正常 render', () => {
+    item.newest = true;
+    const { getByTestId, } = render(
+      <HashRouter>
+        <Chapter key={item.id} content={item} />
+      </HashRouter>
+    );
+
+    expect(getByTestId('chapter_block')).toBeInTheDocument();
+    expect(getByTestId('new_mark')).toBeInTheDocument();
   });
 });

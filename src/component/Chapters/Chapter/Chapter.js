@@ -6,7 +6,14 @@ const Chapter = (props) => {
   const { content, } = props;
   const isNew = () => {
     if (content.newest) {
-      return <span className={styles.new_mark}>NEW</span>;
+      return (
+        <span
+          className={styles.new_mark}
+          data-testid="new_mark"
+        >
+          NEW
+        </span>
+      );
     }
     return null;
   };

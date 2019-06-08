@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, cleanup } from 'react-testing-library';
 import { toBeInTheDocument } from 'jest-dom';
-import Title from '../../component/Title';
+import Title from '../../src/component/Title';
 
 expect.extend({ toBeInTheDocument, });
 

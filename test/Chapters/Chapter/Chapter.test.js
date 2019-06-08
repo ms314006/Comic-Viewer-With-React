@@ -1,11 +1,17 @@
 import React from 'react';
 import { render, fireEvent, cleanup } from 'react-testing-library';
 import { createMemoryHistory } from 'history';
-import { Router } from 'react-router-dom';
+import { HashRouter, Router } from 'react-router-dom';
 import { toBeInTheDocument } from 'jest-dom';
-import Chapter from '../../component/Chapters/Chapter';
+import Chapter from '../../../src/component/Chapters/Chapter';
 
 expect.extend({ toBeInTheDocument, });
+
+const item = {
+  id: '1',
+  title: 'The F2E Challenge Start!',
+  newest: false,
+};
 
 describe('<Chapter />', () => {
   afterEach(() => {
@@ -13,7 +19,11 @@ describe('<Chapter />', () => {
   });
 
   test('測試有沒有正常 render', () => {
-    const { getByTestId, } = render(<Chapter />);
+    const { getByTestId, } = render(
+      <HashRouter>
+        <Chapter key={item.id} content={item} />
+      </HashRouter>
+    );
 
     expect(getByTestId('chapter_block')).toBeInTheDocument();
   });
@@ -24,12 +34,12 @@ describe('<Chapter />', () => {
 
     const { getByTestId, } = render(
       <Router history={history}>
-        <Chapter />
+        <Chapter key={item.id} content={item} />
       </Router>
     );
     expect(history.location.pathname).toBe('/');
     const chapter = getByTestId('chapter_link');
     fireEvent.click(chapter);
-    expect(history.location.pathname).toBe(`${chapter.href}`);
+    expect(history.location.pathname).toBe(`/chapter/${item.id}`);
   });
 });

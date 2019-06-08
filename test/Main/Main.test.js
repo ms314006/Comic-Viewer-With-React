@@ -3,7 +3,7 @@ import { render, fireEvent, cleanup } from 'react-testing-library';
 import { createMemoryHistory } from 'history';
 import { Router, HashRouter } from 'react-router-dom';
 import { toBeInTheDocument } from 'jest-dom';
-import Main from '../../component/Main';
+import Main from '../../src/component/Main';
 
 expect.extend({ toBeInTheDocument, });
 

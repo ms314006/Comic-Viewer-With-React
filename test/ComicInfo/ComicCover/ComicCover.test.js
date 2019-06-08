@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, cleanup } from 'react-testing-library';
 import { toBeInTheDocument } from 'jest-dom';
-import ComicCover from '../../component/ComicInfo/ComicCover';
+import ComicCover from '../../../src/component/ComicInfo/ComicCover';
 
 expect.extend({ toBeInTheDocument, });
 

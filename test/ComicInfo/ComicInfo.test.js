@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, cleanup } from 'react-testing-library';
 import { toBeInTheDocument } from 'jest-dom';
-import ComicInfo from '../../component/ComicInfo';
+import ComicInfo from '../../src/component/ComicInfo';
 
 expect.extend({ toBeInTheDocument, });
 

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import styles from './index.scss';
 
@@ -32,6 +33,14 @@ const Chapter = (props) => {
       {isNew()}
     </div>
   );
+};
+
+Chapter.propTypes = {
+  content: PropTypes.shape({}),
+};
+
+Chapter.defaultProps = {
+  content: {},
 };
 
 export default Chapter;

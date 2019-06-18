@@ -25,7 +25,7 @@ const Chapter = (props) => {
       data-testid="chapter_block"
     >
       <Link
-        to={`/chapter/${content.id}`}
+        to={`/chapter/${content.id}/1`}
         data-testid="chapter_link"
       >
         {`Chapter ${content.id}: ${content.title}`}

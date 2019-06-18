@@ -43,7 +43,7 @@ describe('<Chapter />', () => {
     expect(history.location.pathname).toBe('/');
     const chapter = getByTestId('chapter_link');
     fireEvent.click(chapter);
-    expect(history.location.pathname).toBe(`/chapter/${item.id}`);
+    expect(history.location.pathname).toBe(`/chapter/${item.id}/1`);
   });
 
   test('測試 new mark 有沒有正常 render', () => {

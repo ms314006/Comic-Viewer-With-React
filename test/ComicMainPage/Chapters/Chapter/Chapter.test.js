@@ -3,7 +3,7 @@ import { render, fireEvent, cleanup } from 'react-testing-library';
 import { createMemoryHistory } from 'history';
 import { HashRouter, Router } from 'react-router-dom';
 import { toBeInTheDocument } from 'jest-dom';
-import Chapter from '../../../src/component/Chapters/Chapter';
+import Chapter from '../../../../src/component/ComicMainPage/Chapters/Chapter';
 
 expect.extend({ toBeInTheDocument, });
 

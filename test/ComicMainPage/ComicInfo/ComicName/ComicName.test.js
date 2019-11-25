@@ -1,18 +1,18 @@
 import React from 'react';
 import { render, cleanup } from 'react-testing-library';
 import { toBeInTheDocument } from 'jest-dom';
-import ComicData from '../../../src/component/ComicInfo/ComicData';
+import ComicName from '../../../../src/component/ComicMainPage/ComicInfo/ComicName';
 
 expect.extend({ toBeInTheDocument, });
 
-describe('<ComicData />', () => {
+describe('<ComicName />', () => {
   afterEach(() => {
     cleanup();
   });
 
   test('測試有沒有正常 render', () => {
-    const { getByTestId, } = render(<ComicData />);
+    const { getByTestId, } = render(<ComicName />);
 
-    expect(getByTestId('comicData_block')).toBeInTheDocument();
+    expect(getByTestId('comicName_block')).toBeInTheDocument();
   });
 });
